@@ -2,54 +2,271 @@
 
     $h: &;
 
-    &__hamburguer {
-        cursor: pointer;
-        width: 25px;
-        height: 25px;
-        margin: auto;
-        position: absolute;
-        right: 32px;
-        top: 30px;
+    @include trans;
 
-        span {
-            background-color: $mainColor;
-            border-radius: 2px;
-            content: '';
-            display: block;
+    position: relative;
+    
+    &.js-scroll {
+        position: fixed;
+        top: 0;
+        opacity: 1;
+        height: auto;
+        z-index: 3000;
+        width: 100vw;
+        
+        #{$h}__button {
+            display: none;
+        }
+        
+        #{$h}__logo {
+            height: auto;
+            opacity: 1;
+            overflow: visible;
+            background: $black;
+
+            img {
+                // width: 15%;
+            }
+        }
+        
+        #{$h}__container {
+            opacity: 1;
+            justify-content: space-between;
+            flex-direction: row;
+            background: $white;
+            height: 80px;
+            padding: 0 8%;
+        }
+        
+        #{$h}__nav {
+            width: 57%;
+        }
+        
+        #{$h}__list {
+            height: auto;
+            opacity: 1;
+            justify-content: flex-start;
             width: 100%;
-            height: 2px;
 
-            &:nth-child(1) {
-                animation:outT 0.6s $easing backwards;
-                animation-direction:reverse;
+            li {
+                padding-bottom: 0;
+                margin-bottom: 0;
+                margin: 0;
+                margin-right: 80px;
+                width: auto;
+
+                &:after {
+                    display: none;
+                }
+
+                a {
+                    h2 {
+                        font-size: 18px;
+                    }
+                    p {
+                        display: none;
+                    }
+                }
             }
-            &:nth-child(2) {
-                margin: 7px 0;
-                animation:outM 0.6s $easing backwards;
-                animation-direction:reverse;
+        }
+
+        #{$h}__social {
+            display: none;
+        }
+    }
+
+    &__button {
+        @include trans;
+        
+        position: absolute;
+        top: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 5%;
+        height: 0;
+        padding-bottom: 10%;
+        overflow: hidden;
+        z-index: 1000;
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+        }
+    }
+    
+    &__container {
+        @include trans;
+
+        background: $lightGray;
+        height: 0;
+        overflow: hidden;
+        opacity: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    &__logo {
+        margin-bottom: 0;
+        height: 0;
+        opacity: 0;
+        width: 10%;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__nav {
+        @include trans;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        max-width: 1260px;
+
+    }
+
+    &__list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 0;
+        opacity: 0;
+
+        li {
+            width: 15%;
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            position: relative;
+
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 40px;
+                height: 2px;
+                background: $darkGray;
             }
-            &:nth-child(3) {
-                animation:outBtm 0.6s $easing backwards;
-                animation-direction:reverse;
+        }
+
+        a {
+            text-align: center;
+            color: $black;
+            text-decoration: none;
+
+            h2 {
+                font-weight: 700;
+                margin: 0;
+                margin-bottom: 5px;
+            }
+
+            p {
+                margin: 0;
             }
         }
     }
 
-    &.-open {
-        #{$h}__hamburguer {
-            span:nth-child(1) {
-                animation:inT 0.6s $easing forwards;
-            }
-            span:nth-child(2) {
-                animation:inM 0.6s $easing forwards;
-            }
-            span:nth-child(3) {
-                animation:inBtm 0.6s $easing forwards;
+    &__social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 0;
+        opacity: 0;
+
+        li {
+            margin: 0 15px;
+
+            a {
+                text-decoration: none;
+
+                i {
+                    color: $black;
+                    font-weight: 700;
+                }
             }
         }
+    }
 
-        #{$h}__nav {
+    // &__hamburguer {
+    //     cursor: pointer;
+    //     width: 25px;
+    //     // height: 25px;
+    //     // margin: auto;
+    //     // position: absolute;
+    //     // right: 32px;
+    //     // top: 30px;
 
+    //     span {
+    //         background-color: $mainColor;
+    //         border-radius: 2px;
+    //         content: '';
+    //         display: block;
+    //         width: 100%;
+    //         height: 2px;
+
+    //         &:nth-child(1) {
+    //             animation:outT 0.6s $easing backwards;
+    //             animation-direction:reverse;
+    //         }
+    //         &:nth-child(2) {
+    //             margin: 7px 0;
+    //             animation:outM 0.6s $easing backwards;
+    //             animation-direction:reverse;
+    //         }
+    //         &:nth-child(3) {
+    //             animation:outBtm 0.6s $easing backwards;
+    //             animation-direction:reverse;
+    //         }
+    //     }
+    // }
+
+    &.-open {
+        // #{$h}__hamburguer {
+        //     span:nth-child(1) {
+        //         animation:inT 0.6s $easing forwards;
+        //     }
+        //     span:nth-child(2) {
+        //         animation:inM 0.6s $easing forwards;
+        //     }
+        //     span:nth-child(3) {
+        //         animation:inBtm 0.6s $easing forwards;
+        //     }
+        // }
+
+        #{$h}__logo {
+            margin-bottom: 40px;
+            height: auto;
+            opacity: 1;
+        }
+
+        #{$h}__container {
+            padding: 80px 0;
+            height: auto;
+            overflow: visible;
+            opacity: 1;
+        }
+
+        #{$h}__list,
+        #{$h}__social {
+            height: auto;
+            opacity: 1;
+        }
+
+        #{$h}__button {
+            width: 5%;
+            padding-bottom: 5%;
+            right: 8%;
+            transform: translateX(0);
+            left: auto;
         }
     }
 }

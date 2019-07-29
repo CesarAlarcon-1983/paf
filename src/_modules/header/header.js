@@ -4,18 +4,20 @@
 var Header = function() {
     var header = $('.header');
     var body = $('body');
-    var menuOpen = $('.header__hamburguer');
-    var menuClose = $('.header__nav__close');
+    var menuOpen = $('.header__button');
 
     menuOpen.on('click', function(){
-        header.addClass('-open');
-        body.addClass('-hideOverflow');
+        header.toggleClass('-open');
+        body.toggleClass('-hideOverflow');
     });
-
-    menuClose.on('click', function(){
-        header.removeClass('-open');
-        body.removeClass('-hideOverflow');
-    });
+    
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > 750){      
+            header.addClass('js-scroll');
+        } else {
+            header.removeClass("js-scroll");
+        }
+      });
 };
 
 module.exports = Header;

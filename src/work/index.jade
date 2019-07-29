@@ -1,0 +1,23 @@
+extends ../_layouts/base
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../';
+
+block content
+    main.work
+        .work__proyect-background
+            img(src="/images/work/project-main.jpg")
+        .container
+            .row
+                .col-24
+                    .work__proyect
+                        h4.work__uppertitle Mucho Estilo.
+                        h2.work__title Estilo Natural.
+                        p.work__company Natura Cosméticos
+                        p.work__proyect-name ¡Perrea Bobby!
+    
+                    span.work__indicator Scroll
+
+
+

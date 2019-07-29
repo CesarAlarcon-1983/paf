@@ -21,6 +21,11 @@ body {
     overflow-x: hidden;
     width: 100vw;
     font-size: $sm;
+    color: $mainColor;
+  }
+
+h1, h2, h3, h4, h5, h6 {
+  color: $mainColor;
 }
 
 a {

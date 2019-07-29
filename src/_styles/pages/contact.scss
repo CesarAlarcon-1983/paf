@@ -1,0 +1,183 @@
+.contact {
+    &__hero {
+        background: url('/images/contacto/hero.jpg') no-repeat center bottom / cover;
+        position: relative;
+        padding: 40vh 0 10vh 0;
+
+        &__title {
+            color: $white;
+            font-size: 100px;
+            margin: 0;
+            font-weight: 900;
+        }
+    }
+
+    &__info {
+        padding: 50px 0;
+
+        @include mq(md) {
+            padding: 100px 0;
+        }
+
+        &__title {
+            display: inline-block;
+            padding-right: 100px;
+            border-top: 1px solid $corpBlack;
+            margin: 0;
+            padding-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        &__container {
+            
+            @include mq(md) {
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
+
+        &__main-title {
+            width: 100%;
+            font-size: 30px;
+            font-weight: 900;
+            margin: 0;
+            margin-bottom: 40px;
+
+            @include mq(md) {
+                font-size: 40px;
+            }
+        }
+
+        &__wrapper {
+            width: 100%;
+
+            @include mq(md) {
+                width: 50%;
+            }
+        }
+    }
+
+    &__nonprofit {
+        padding: 50px 0;
+        background: url('/images/contacto/middle.jpg') no-repeat center center / cover;
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, .7);
+        }
+        
+        @include mq(md) {
+            padding: 100px 0;
+        }
+
+        &__title {
+            display: inline-block;
+            padding-right: 100px;
+            border-top: 1px solid $white;
+            margin: 0;
+            padding-top: 20px;
+            color: $white;
+            margin-bottom: 40px;
+        }
+
+        &__main-title {
+            width: 100%;
+            font-weight: 900;
+            margin: 0;
+            margin-bottom: 40px;
+            color: $white;
+            font-size: 30px;
+
+            @include mq(md) {
+                font-size: 40px;
+            }
+        }
+        
+        &__text {
+            color: $white;
+            line-height: 1.6;
+        }
+    }
+
+
+    &__form {
+        padding: 50px 0;
+        background: $lightGray;
+
+        @include mq(md) {
+            padding: 100px 0;
+        }        
+    
+        &__title {
+            display: inline-block;
+            padding-right: 50px;
+            border-top: 1px solid $corpBlack;
+            margin: 0;
+            padding-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        &__input {
+            border: none;
+            background: none;
+            border-bottom: 1px solid $corpBlack;
+            height: 50px;
+            width: 100%;
+            outline: none;
+            margin-bottom: 30px;
+
+            @include mq(md) {
+                margin-bottom: 0;
+            }
+
+            &:not(:last-child) {
+                @include mq(md) {
+                    margin-bottom: 20px;
+                }
+            }
+
+            &--textarea {
+                @include trans;
+
+                height: 50px;
+                
+                @include mq(md) {
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+                }
+                
+                &:focus {
+                    height: 200px;
+
+                    @include mq(md) {
+                        height: 100%;
+                    }
+                }
+            }
+        }
+
+        &__button {
+            display: block;
+            border: 1px solid $red;
+            padding: 15px 0;
+            text-align: center;
+            color: $red;
+            font-weight: 900;
+            background: none;
+            width: 100%;
+            margin-top: 20px;
+
+            @include mq(md) {
+                margin-top: 40px;
+                width: 50%;
+
+            }
+        }
+    }
+}

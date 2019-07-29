@@ -1,0 +1,32 @@
+extends ../_layouts/base
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../';
+
+block content
+    main.blog
+        section.blog__hero
+            .container
+                .row
+                    .col-24
+                        h2.blog__hero__title Hello.
+        section.blog__articles
+            .container
+                .row
+                    - for(var i = 0; i < 9; i++) {
+                        .col-24.col-md-8
+                            a.blog__articles__container(href="#")
+                                .blog__articles__image
+                                    img(src="/images/home/blog-2.jpg")
+                                .blog__articles__content
+                                    .blog__articles__wrapper
+                                        h3.blog__articles__content-subtitle diseño
+                                        h2.blog__articles__content-title Diseño, tecnología e innovación.
+                                    p.blog__articles__content-text
+                                        span Margarita Alber Cobo | 
+                                        |Grafic Designer                                
+                    - }
+
+
+        

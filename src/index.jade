@@ -2,3 +2,89 @@ extends _layouts/base
 
 block content
     main.home
+        section.home__hero
+            .container
+                .row
+                    .col-24
+                        .home__hero__logo
+                            img(src="/images/logo.png")
+
+        section.home__about
+            .container
+                .row
+                    .col-24.col-md-10
+                        h3.home__about__title About.
+                        p.home__about__text Como hacemos.
+                    .col-24.col-md-14
+                        h2.home__about__main-title 
+                            |El Think Tank
+                            br
+                            |Creativo Digital.
+                        p.home__about__main-text Somos un think tank creativo para marcas y agencias. Nuestro objetivo es crear experiencias digitales eficientes  y trascender los límites de las ideas.
+        section.home__work
+            .container
+                .row
+                    .col-24
+                        h3.home__work__title Work.
+                        p.home__work__text Las cosas que hacemos.
+                    .col-24.col-md-12
+                        .home__work__container
+                            img(src="/images/home/project-1.jpg")
+                            .home__work__wrapper
+                                h3.home__work__wrapper-title ¡Perrea Bobby!
+                                p.home__work__wrapper-text MSD / BRAVECTO
+                    .col-24.col-md-12
+                        .home__work__container
+                            img(src="/images/home/project-2.jpg")
+                            .home__work__wrapper
+                                h3.home__work__wrapper-title Letra Grande
+                                p.home__work__wrapper-text Meridional seguros
+                    .col-24
+                        .home__work__container.home__work__container--big
+                            img(src="/images/home/project-3.jpg")
+                            .home__work__wrapper
+                                h3.home__work__wrapper-title Cábalas peruanas
+                                p.home__work__wrapper-text intralot / kabala
+                    .col-24.col-md-12
+                        .home__work__container
+                            img(src="/images/home/project-4.jpg")
+                            .home__work__wrapper
+                                h3.home__work__wrapper-title Mucho Estilo
+                                p.home__work__wrapper-text alfaparf group
+                    .col-24.col-md-12
+                        .home__work__container
+                            img(src="/images/home/project-5.jpg")
+                            .home__work__wrapper
+                                h3.home__work__wrapper-title Estilo Natural
+                                p.home__work__wrapper-text natura cosméticos
+
+        section.home__blog
+            .container
+                .row
+                    .col-24
+                        h3.home__blog__title Blog.
+                        p.home__blog__text Dice mucho.
+                    .col-24.col-md-16
+                        .home__blog__container.home__blog__container--image-right
+                            .home__blog__content
+                                .home__blog__wrapper
+                                    h3.home__blog__content-subtitle digital marketing
+                                    h2.home__blog__content-title ¿Como encarar una campaña digital creativa y eficiente?
+                                p.home__blog__content-text
+                                    span Pol Fabbri
+                                    |Founder & General Manager at !PAF Collective. The creative Think Tank
+                            .home__blog__image
+                                img(src="/images/home/blog-1.jpg")
+                    .col-24.col-md-8
+                        .home__blog__container.home__blog__container--image-up
+                            .home__blog__image
+                                img(src="/images/home/blog-2.jpg")
+                            .home__blog__content
+                                .home__blog__wrapper
+                                    h3.home__blog__content-subtitle diseño
+                                    h2.home__blog__content-title Diseño, tecnología e innovación.
+                                p.home__blog__content-text
+                                    span Margarita Alber Cobo | 
+                                    |Grafic Designer
+
+
