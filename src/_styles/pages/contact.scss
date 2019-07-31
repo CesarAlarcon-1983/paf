@@ -3,6 +3,7 @@
         background: url('/images/contacto/hero.jpg') no-repeat center bottom / cover;
         position: relative;
         padding: 40vh 0 10vh 0;
+        z-index: 4000;
 
         &__title {
             color: $white;

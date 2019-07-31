@@ -2,6 +2,7 @@
     &__hero {
         background: url('/images/about/hero.jpg') no-repeat center center / cover;
         position: relative;
+        z-index: 4000;
         
         @include mq(md) {
             padding: 20vh 0;
