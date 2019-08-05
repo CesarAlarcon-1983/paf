@@ -1,7 +1,9 @@
 .footer {
     background: $black;
     padding: 40px 0;
-
+    // position: relative;
+    // z-index: 4000;
+    
     @include mq(md) {
         padding: 80px 0;
     }

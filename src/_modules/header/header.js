@@ -5,19 +5,43 @@ var Header = function() {
     var header = $('.header');
     var body = $('body');
     var menuOpen = $('.header__button');
-    // var menuClose = $('.header__logo');
+    var contactTitle = $('.contact__hero__title');
 
     menuOpen.on('click', function(){
         header.toggleClass('-open');
         body.toggleClass('-hideOverflow');
     });
+
+    var language = [
+        'Hello.',
+        'Hola.',
+        'Buenas.',
+        'Ola.',
+        'Ei.',
+        '你好.',
+        'E\'yo',
+        'Ello.',
+        'Aye.'
+    ];
+
+    var index = 0;
+
+        
+    setInterval(function() {
+        contactTitle.html(language[index]);
+        index == (language.length - 1) ? index = 0 : index++;
+    }, 800);
     
-    $(window).scroll(function(){
-        if ($(this).scrollTop() > 200){      
-            header.addClass('js-scroll');
-        } else {
-            header.removeClass("js-scroll");
-        }
+    // $(window).scroll(function(){
+    //     if ($(this).scrollTop() > 200){      
+    //         header.addClass('js-scroll');
+    //     } else {
+    //         header.removeClass("js-scroll");
+    //     }
+    // });
+
+    menuOpen.on('mouseenter mouseleave', function() {
+        header.toggleClass('js-hovered');
     });
 
     // Header Button Overlay
@@ -71,8 +95,6 @@ var Header = function() {
         }, 1000)
     }
     $(window).on('scroll mousewheel touchmove', function(e) {
-        console.log(this);
-        console.log(e);
         if(!isChanging && e.originalEvent.deltaY > 0 && (index + 1) < projectContainer.length) {
             proyectIsChanging();
             $(projectContainer[index]).removeClass('js-active')
@@ -83,7 +105,6 @@ var Header = function() {
         if(!isChanging && e.originalEvent.deltaY < 0 && index > 0) {
             index --;
         }
-        console.log(index);
     });
 
      

@@ -1,5 +1,6 @@
 .home {
-
+    background: #212121;
+    color: $white;
     $h: &;
 
     &__hero {
@@ -11,71 +12,120 @@
 
         @include mq(md) {
             height: 100vh;
-            padding-top: 60vh;
+            padding-top: 9.6vw;
+        }
+
+        &__col {
+            height: calc(100vh - 9.6vw);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         &__logo {
+            width: 40%;
+
             img {
                 height: auto;
                 width: 70%;
 
                 @include mq(md) {
-                    width: auto;
+                    width: 100%;
+                    height: auto;
                 }
             }
         }
-    }
 
-
-    &__about {
-        padding: 50px 0;
-
-        @include mq(md) {
-            padding: 100px 0;
+        &__wrapper {
+            display: flex;
+            align-items: center;
         }
 
-        &__title {
-            font-size: 50px;
-            font-weight: 900;
-            color: $corpBlack;
-            margin: 0;
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid $midGray;
-            display: inline-block;
-            padding-right: 40px;
+        &__slogan {
+            text-transform: uppercase;
+            color: $white;
+            margin-right: 10px;
+            padding-right: 10px;
+            border-right: 1px solid $white;
+
+            span {
+                display: block;
+
+                &.small {
+                    font-size: 21px;
+                }
+
+                &.medium {
+                    font-size: 25px;
+                }
+                
+                &.big {
+                    font-size: 40px;
+                    
+                }
+            }
         }
 
         &__text {
-            margin: 0;
-            margin-bottom: 40px;
+            color: $white;
+            font-size: 24px;
 
-            @include mq(md) {
-                margin-bottom: 0;    
-            }
-        }
-
-        &__main-title {
-            margin: 0;
-            margin-bottom: 40px;
-            font-size: 40px;
-
-            @include mq(md) {
-                font-size: 60px;
-             
-            }
-        }
-
-        &__main-text {
-            margin: 0;
-            font-size: 20px;
-            
-            @include mq(md) {
-                font-size: 24px;
-             
+            span {
+                font-weight: 900;
             }
         }
     }
+
+
+    // &__about {
+    //     padding: 50px 0;
+
+    //     @include mq(md) {
+    //         padding: 100px 0;
+    //     }
+
+    //     &__title {
+    //         font-size: 50px;
+    //         font-weight: 900;
+    //         color: $corpBlack;
+    //         margin: 0;
+    //         margin-bottom: 20px;
+    //         padding-bottom: 20px;
+    //         border-bottom: 2px solid $midGray;
+    //         display: inline-block;
+    //         padding-right: 40px;
+    //     }
+
+    //     &__text {
+    //         margin: 0;
+    //         margin-bottom: 40px;
+
+    //         @include mq(md) {
+    //             margin-bottom: 0;    
+    //         }
+    //     }
+
+    //     &__main-title {
+    //         margin: 0;
+    //         margin-bottom: 40px;
+    //         font-size: 40px;
+
+    //         @include mq(md) {
+    //             font-size: 60px;
+             
+    //         }
+    //     }
+
+    //     &__main-text {
+    //         margin: 0;
+    //         font-size: 20px;
+            
+    //         @include mq(md) {
+    //             font-size: 24px;
+             
+    //         }
+    //     }
+    // }
 
     &__work {
         background: $black;
@@ -84,24 +134,30 @@
         @include mq(md) {
             padding: 100px 0;
         }
+
+        &__group {
+            display: flex;
+            align-items: flex-end;
+            margin-bottom: 40px;
+        }
         
         &__title {
             font-size: 50px;
             font-weight: 900;
             color: $white;
             margin: 0;
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid $white;
-            display: inline-block;
-            padding-right: 40px;
+            margin-bottom: 40px;
+
+            span {
+                font-size: 20px;
+                font-weight: 100;
+            }
         }        
 
-        &__text {
-            margin: 0;
-            margin-bottom: 40px;
-            color: $midGray;
-        }
+        // &__text {
+        //     margin: 0;
+        //     color: $midGray;
+        // }
 
         &__container {
             width: 100%;
@@ -130,6 +186,11 @@
                 img {
                     height: 100%;
                     width: auto;
+
+                    @include mq(md) {
+                        height: auto;
+                        width: 100%;
+                    }
                 }
             }
         }
@@ -167,18 +228,19 @@
             font-size: 50px;
             font-weight: 900;
             margin: 0;
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid $midGray;
-            display: inline-block;
-            padding-right: 40px;
+            margin-bottom: 40px;
+
+            span {
+                font-size: 20px;
+                font-weight: 100;
+            }
         }        
 
-        &__text {
-            margin: 0;
-            margin-bottom: 40px;
-            color: $midGray;
-        }
+        // &__text {
+        //     margin: 0;
+        //     margin-bottom: 40px;
+        //     color: $midGray;
+        // }
 
         &__container {
             width: 100%;
@@ -296,6 +358,7 @@
         &__content-text {
             margin: 0;
             font-size: 14px;
+            color: $black;
 
             span {
                 font-weight: 700;

@@ -4,6 +4,14 @@
         position: relative;
         padding: 40vh 0 10vh 0;
         z-index: 4000;
+        display: flex;
+        align-items: center; 
+
+        @include mq(md) {
+            padding: 0;
+            height: 80vh;
+            padding-top: 9.6vw;
+        }
 
         &__title {
             color: $white;
@@ -58,7 +66,7 @@
         }
     }
 
-    &__nonprofit {
+    &__form {
         padding: 50px 0;
         background: url('/images/contacto/middle.jpg') no-repeat center center / cover;
         position: relative;
@@ -104,48 +112,29 @@
             color: $white;
             line-height: 1.6;
         }
-    }
-
-
-    &__form {
-        padding: 50px 0;
-        background: $lightGray;
-
-        @include mq(md) {
-            padding: 100px 0;
-        }        
-    
-        &__title {
-            display: inline-block;
-            padding-right: 50px;
-            border-top: 1px solid $corpBlack;
-            margin: 0;
-            padding-top: 20px;
-            margin-bottom: 40px;
-        }
-
         &__input {
             border: none;
             background: none;
-            border-bottom: 1px solid $corpBlack;
+            border-bottom: 1px solid $white;
             height: 50px;
             width: 100%;
             outline: none;
             margin-bottom: 30px;
-
+            color: $white;
+    
             @include mq(md) {
                 margin-bottom: 0;
             }
-
+    
             &:not(:last-child) {
                 @include mq(md) {
                     margin-bottom: 20px;
                 }
             }
-
+    
             &--textarea {
                 @include trans;
-
+    
                 height: 50px;
                 
                 @include mq(md) {
@@ -155,14 +144,14 @@
                 
                 &:focus {
                     height: 200px;
-
+    
                     @include mq(md) {
                         height: 100%;
                     }
                 }
             }
         }
-
+    
         &__button {
             display: block;
             border: 1px solid $red;
@@ -173,11 +162,11 @@
             background: none;
             width: 100%;
             margin-top: 20px;
-
+    
             @include mq(md) {
                 margin-top: 40px;
                 width: 50%;
-
+    
             }
         }
     }

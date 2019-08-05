@@ -1,9 +1,17 @@
 .blog {
     &__hero {
-        background: url('/images/contacto/hero.jpg') no-repeat center bottom / cover;
+        background: url('/images/blog/hero.jpg') no-repeat center center / cover;
         position: relative;
         padding: 40vh 0 10vh 0;
         z-index: 4000;
+        display: flex;
+        align-items: center; 
+
+        @include mq(md) {
+            height: 80vh;
+            padding: 0;
+            padding-top: 9.6vw;
+        }
 
         &__title {
             color: $white;
