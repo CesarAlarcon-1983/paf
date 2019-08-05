@@ -15,9 +15,8 @@
 
         &__title {
             color: $white;
-            font-size: 100px;
+            font-size: 80px;
             margin: 0;
-            font-weight: 900;
         }
     }
 
@@ -97,11 +96,11 @@
 
         &__main-title {
             width: 100%;
-            font-weight: 900;
+            font-weight: 100;
             margin: 0;
             margin-bottom: 40px;
             color: $white;
-            font-size: 30px;
+            font-size: 24px;
 
             @include mq(md) {
                 font-size: 40px;
@@ -111,7 +110,14 @@
         &__text {
             color: $white;
             line-height: 1.6;
+            margin-bottom: 40px;
+            font-size: 14px;
+
+            @include mq(md) {
+                font-size: 16px;
+            }
         }
+
         &__input {
             border: none;
             background: none;
@@ -121,7 +127,12 @@
             outline: none;
             margin-bottom: 30px;
             color: $white;
-    
+            
+            &::placeholder {
+                color: $white;
+                opacity: .7;
+            }
+
             @include mq(md) {
                 margin-bottom: 0;
             }
@@ -168,6 +179,48 @@
                 width: 50%;
     
             }
+        }
+    }
+
+    &__location {
+        padding: 50px 0 10px 0;
+        background: $black;
+
+        @include mq(md) {
+            padding: 100px 0;
+        }
+
+        &__title {
+            display: inline-block;
+            padding-right: 100px;
+            border-top: 1px solid $white;
+            margin: 0;
+            padding-top: 20px;
+            margin-bottom: 40px;
+            color: $white;
+        }
+
+        &__main-title {
+            margin: 0;
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: $white;
+            
+            @include mq(md) {
+                font-size: 28px;
+            }
+        }
+
+        &__text {
+            font-size: 16px;
+            margin: 0;
+            margin-bottom: 40px;
+            color: $white;
+
+            @include mq(md) {
+                margin-bottom: 0;
+                font-size: 20px;
+            }            
         }
     }
 }

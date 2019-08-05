@@ -6,8 +6,8 @@
     &__hero {
         background: url('/images/home/hero.jpg') no-repeat center center / cover;
         position: relative;
-        height: 60vh;
-        padding-top: 30vh;
+        height: 80vh;
+        padding-top: 14vh;
         z-index: 4000;
 
         @include mq(md) {
@@ -16,18 +16,28 @@
         }
 
         &__col {
-            height: calc(100vh - 9.6vw);
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            height: calc(80vh - 14vh);
+
+            @include mq(md) {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                height: calc(100vh - 9.6vw);
+            }
         }
 
         &__logo {
-            width: 40%;
+            
+            @include mq(md) {
+                width: 40%;
+            }
 
             img {
                 height: auto;
-                width: 70%;
+                width: 50%;
 
                 @include mq(md) {
                     width: 100%;
@@ -48,27 +58,43 @@
             padding-right: 10px;
             border-right: 1px solid $white;
 
+
             span {
                 display: block;
 
                 &.small {
-                    font-size: 21px;
+                    font-size: 14px;
+
+                    @include mq(md) {
+                        font-size: 21px;
+                    }
                 }
 
                 &.medium {
-                    font-size: 25px;
+                    font-size: 16px;
+
+                    @include mq(md) {
+                        font-size: 25px;
+                    }
                 }
                 
                 &.big {
-                    font-size: 40px;
-                    
+                    font-size: 26px;
+
+                    @include mq(md) {
+                        font-size: 40px;
+                    }
                 }
             }
         }
 
         &__text {
             color: $white;
-            font-size: 24px;
+            font-size: 14px;
+
+            @include mq(md) {
+                font-size: 24px;
+            }
 
             span {
                 font-weight: 900;
@@ -142,15 +168,23 @@
         }
         
         &__title {
-            font-size: 50px;
             font-weight: 900;
             color: $white;
             margin: 0;
             margin-bottom: 40px;
+            font-size: 30px;
+            
+            @include mq(md) {
+                font-size: 50px;
+            }
 
             span {
-                font-size: 20px;
                 font-weight: 100;
+                font-size: 16px;
+
+                @include mq(md) {
+                    font-size: 20px;
+                }
             }
         }        
 
@@ -225,14 +259,22 @@
         }
         
         &__title {
-            font-size: 50px;
             font-weight: 900;
             margin: 0;
             margin-bottom: 40px;
+            font-size: 30px;
+            
+            @include mq(md) {
+                font-size: 50px;
+            }
 
             span {
-                font-size: 20px;
                 font-weight: 100;
+                font-size: 16px;
+                                
+                @include mq(md) {
+                    font-size: 20px;
+                }
             }
         }        
 
