@@ -6,3 +6,4 @@ tmp
 .grunt
 .DS_Store
 web
+package-lock.json

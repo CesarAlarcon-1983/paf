@@ -1,81 +1,157 @@
 .home {
-
+    background: #212121;
+    color: $white;
     $h: &;
 
     &__hero {
         background: url('/images/home/hero.jpg') no-repeat center center / cover;
         position: relative;
-        height: 60vh;
-        padding-top: 30vh;
+        height: 80vh;
+        padding-top: 14vh;
         z-index: 4000;
 
         @include mq(md) {
             height: 100vh;
-            padding-top: 60vh;
+            padding-top: 9.6vw;
+        }
+
+        &__col {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: calc(80vh - 14vh);
+
+            @include mq(md) {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                height: calc(100vh - 9.6vw);
+            }
         }
 
         &__logo {
+            
+            @include mq(md) {
+                width: 40%;
+            }
+
             img {
                 height: auto;
-                width: 70%;
+                width: 50%;
 
                 @include mq(md) {
-                    width: auto;
+                    width: 100%;
+                    height: auto;
                 }
             }
         }
-    }
 
-
-    &__about {
-        padding: 50px 0;
-
-        @include mq(md) {
-            padding: 100px 0;
+        &__wrapper {
+            display: flex;
+            align-items: center;
         }
 
-        &__title {
-            font-size: 50px;
-            font-weight: 900;
-            color: $corpBlack;
-            margin: 0;
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid $midGray;
-            display: inline-block;
-            padding-right: 40px;
+        &__slogan {
+            text-transform: uppercase;
+            color: $white;
+            margin-right: 10px;
+            padding-right: 10px;
+            border-right: 1px solid $white;
+
+
+            span {
+                display: block;
+
+                &.small {
+                    font-size: 14px;
+
+                    @include mq(md) {
+                        font-size: 21px;
+                    }
+                }
+
+                &.medium {
+                    font-size: 16px;
+
+                    @include mq(md) {
+                        font-size: 25px;
+                    }
+                }
+                
+                &.big {
+                    font-size: 26px;
+
+                    @include mq(md) {
+                        font-size: 40px;
+                    }
+                }
+            }
         }
 
         &__text {
-            margin: 0;
-            margin-bottom: 40px;
+            color: $white;
+            font-size: 14px;
 
-            @include mq(md) {
-                margin-bottom: 0;    
-            }
-        }
-
-        &__main-title {
-            margin: 0;
-            margin-bottom: 40px;
-            font-size: 40px;
-
-            @include mq(md) {
-                font-size: 60px;
-             
-            }
-        }
-
-        &__main-text {
-            margin: 0;
-            font-size: 20px;
-            
             @include mq(md) {
                 font-size: 24px;
-             
+            }
+
+            span {
+                font-weight: 900;
             }
         }
     }
+
+
+    // &__about {
+    //     padding: 50px 0;
+
+    //     @include mq(md) {
+    //         padding: 100px 0;
+    //     }
+
+    //     &__title {
+    //         font-size: 50px;
+    //         font-weight: 900;
+    //         color: $corpBlack;
+    //         margin: 0;
+    //         margin-bottom: 20px;
+    //         padding-bottom: 20px;
+    //         border-bottom: 2px solid $midGray;
+    //         display: inline-block;
+    //         padding-right: 40px;
+    //     }
+
+    //     &__text {
+    //         margin: 0;
+    //         margin-bottom: 40px;
+
+    //         @include mq(md) {
+    //             margin-bottom: 0;    
+    //         }
+    //     }
+
+    //     &__main-title {
+    //         margin: 0;
+    //         margin-bottom: 40px;
+    //         font-size: 40px;
+
+    //         @include mq(md) {
+    //             font-size: 60px;
+             
+    //         }
+    //     }
+
+    //     &__main-text {
+    //         margin: 0;
+    //         font-size: 20px;
+            
+    //         @include mq(md) {
+    //             font-size: 24px;
+             
+    //         }
+    //     }
+    // }
 
     &__work {
         background: $black;
@@ -84,24 +160,38 @@
         @include mq(md) {
             padding: 100px 0;
         }
+
+        &__group {
+            display: flex;
+            align-items: flex-end;
+            margin-bottom: 40px;
+        }
         
         &__title {
-            font-size: 50px;
             font-weight: 900;
             color: $white;
             margin: 0;
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid $white;
-            display: inline-block;
-            padding-right: 40px;
+            margin-bottom: 40px;
+            font-size: 30px;
+            
+            @include mq(md) {
+                font-size: 50px;
+            }
+
+            span {
+                font-weight: 100;
+                font-size: 16px;
+
+                @include mq(md) {
+                    font-size: 20px;
+                }
+            }
         }        
 
-        &__text {
-            margin: 0;
-            margin-bottom: 40px;
-            color: $midGray;
-        }
+        // &__text {
+        //     margin: 0;
+        //     color: $midGray;
+        // }
 
         &__container {
             width: 100%;
@@ -131,6 +221,11 @@
                 img {
                     height: 100%;
                     width: auto;
+
+                    @include mq(md) {
+                        height: auto;
+                        width: 100%;
+                    }
                 }
             }
         }
@@ -165,21 +260,30 @@
         }
         
         &__title {
-            font-size: 50px;
             font-weight: 900;
             margin: 0;
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid $midGray;
-            display: inline-block;
-            padding-right: 40px;
+            margin-bottom: 40px;
+            font-size: 30px;
+            
+            @include mq(md) {
+                font-size: 50px;
+            }
+
+            span {
+                font-weight: 100;
+                font-size: 16px;
+                                
+                @include mq(md) {
+                    font-size: 20px;
+                }
+            }
         }        
 
-        &__text {
-            margin: 0;
-            margin-bottom: 40px;
-            color: $midGray;
-        }
+        // &__text {
+        //     margin: 0;
+        //     margin-bottom: 40px;
+        //     color: $midGray;
+        // }
 
         &__container {
             width: 100%;
@@ -297,6 +401,7 @@
         &__content-text {
             margin: 0;
             font-size: 14px;
+            color: $black;
 
             span {
                 font-weight: 700;
