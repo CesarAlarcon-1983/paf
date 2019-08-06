@@ -118,6 +118,7 @@
                 transform: translate3d(-50%, -50%, 0);
                 width: 100%;
                 height: auto;
+                min-height: 100%;
             }
 
             &--big {
@@ -271,8 +272,8 @@
                 top: 50%;
                 left: 50%;
                 transform: translate3d(-50%, -50%, 0);
-                width: 110%;
-                height: auto;                
+                height: 110%;
+                width: auto;
             }
         }
 

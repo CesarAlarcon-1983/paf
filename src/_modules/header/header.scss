@@ -21,6 +21,7 @@
 
         #{$h}__button {
             display: none;
+            cursor: pointer;
         }
         
         #{$h}__logo {
@@ -31,6 +32,7 @@
             margin-left: 15px;
             width: 30%;
             position: relative;
+            cursor: pointer;
 
             img {
                 position: absolute;
@@ -109,6 +111,7 @@
         z-index: 5000;
         background: $white;
         overflow: hidden;
+        cursor: pointer;
 
         &:hover {
             .js-main-logo {
@@ -129,7 +132,7 @@
                 @include trans;
                 height: 50%;
                 width: auto;
-                pointer-events: none;
+                pointer-events: none;                
             }
 
             &.js-internal-logo {
@@ -321,6 +324,7 @@
         }
         #{$h}__button {
             background: transparent;
+            height: 5vw;
 
             .js-internal-logo {
                 height: auto;
