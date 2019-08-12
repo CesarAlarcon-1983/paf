@@ -15,9 +15,13 @@
 
         &__title {
             color: $white;
-            font-size: 100px;
+            font-size: 80px;
             margin: 0;
             font-weight: 900;
+
+            @include mq(md) {
+                font-size: 8vw;
+            }
         }
     }
 

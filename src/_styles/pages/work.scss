@@ -139,6 +139,17 @@
     & + footer {
         display: none;
     }
+
+    &.-footer-active {
+        z-index: 2000;
+
+        & + footer {
+            position: absolute;
+            top: 100vh;
+            width: 100%;
+            display: block;
+        }
+    }
 }
 
 @keyframes overlay {

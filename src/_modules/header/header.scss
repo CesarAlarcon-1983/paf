@@ -28,102 +28,14 @@
     &.js-hovered {
         &:before {
             @include mq(md) {
-                border-top: 7vw solid $lightGray;
-                border-left: 3.5vw solid $lightGray;
-                border-right: 3.5vw solid $lightGray;
-                border-bottom: 3.5vw solid $lightGray;
+                border-top: 7vw solid $white;
+                border-left: 3.5vw solid $white;
+                border-right: 3.5vw solid $white;
+                border-bottom: 3.5vw solid $white;
             }
     
         }
     }
-    // &.js-scroll {
-    //     position: fixed;
-    //     top: 0;
-    //     z-index: 3000;
-    //     width: 100%;
-    //     display: flex;
-    //     justify-content: space-between;
-    //     align-items: center;
-    //     background: $white;
-    //     height: 80px;
-
-    //     #{$h}__button {
-    //         display: none;
-    //     }
-        
-    //     #{$h}__logo {
-    //         display: block;
-    //         height: 100%;
-    //         opacity: 1;
-    //         overflow: hidden;
-    //         margin-left: 15px;
-    //         width: 30%;
-    //         position: relative;
-
-    //         img {
-    //             position: absolute;
-    //             left: 0;
-    //             top: 50%;
-    //             transform: translateY(-50%);
-    //             height: 50%;
-    //             width: auto;
-    //         }
-    //     }
-        
-    //     #{$h}__container {
-    //         opacity: 1;
-    //         justify-content: space-between;
-    //         flex-direction: row;
-    //         background: $white;
-    //         height: 80px;
-    //         width: 100%;
-    //         max-width: 1260px;
-    //         margin-left: auto;
-    //         margin-right: auto;
-    //         padding: 0;
-    //     }
-        
-    //     #{$h}__nav {
-    //         width: 56%;
-    //         height: 100%;
-    //         display: flex;
-    //         align-items: center;
-    //     }
-        
-    //     #{$h}__list {
-    //         height: auto;
-    //         opacity: 1;
-    //         justify-content: flex-start;
-    //         align-items: center;
-    //         width: 100%;
-    //         height: 100%;
-
-    //         li {
-    //             padding-bottom: 0;
-    //             margin-bottom: 0;
-    //             margin: 0;
-    //             margin-right: 80px;
-    //             width: auto;
-
-    //             &:after {
-    //                 display: none;
-    //             }
-
-    //             a {
-    //                 h2 {
-    //                     font-size: 18px;
-    //                 }
-    //                 p {
-    //                     display: none;
-    //                 }
-    //             }
-    //         }
-    //     }
-
-    //     #{$h}__social {
-    //         display: none;
-    //     }
-    // }
 
     &__button {
         @include trans;

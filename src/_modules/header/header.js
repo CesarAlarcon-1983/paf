@@ -88,6 +88,7 @@ var Header = function() {
         $(projectContainer[0]).addClass('js-active');
     }
     
+    var workPage = $('.work');
     var projectContainer = $('.work__proyect');
     var scrollOffset = 0;
     var isChanging = false;
@@ -109,7 +110,6 @@ var Header = function() {
     });
     
     $(window).on('scroll mousewheel touchmove', function(e) {
-        console.log (e);
 
         if (e.type !== 'touchmove') {
             if(!isChanging && e.originalEvent.deltaY > 0 && (projectIndex + 1) < projectContainer.length) {
@@ -122,11 +122,9 @@ var Header = function() {
         }
 
         if (e.type === 'touchmove') {
-            console.log('touch');
             var te = e.originalEvent.changedTouches[0].clientY;
 
             if (!isChanging && ts > te && (projectIndex + 1) < projectContainer.length) {
-                console.log('down');
                 nextProject();
             }
             
@@ -137,29 +135,49 @@ var Header = function() {
         }
     });
 
+    var scrollCount = 0
+
+    console.log('Project Containers',projectContainer.length);
+    
     function nextProject() {
-        console.log('scroll down', projectIndex);
         proyectIsChanging();
+
         
         $(projectContainer).addClass('js-overlay-down');
-
+        
         setTimeout(function() {
+            console.log(projectIndex);
             $(projectContainer[projectIndex]).removeClass('js-active')
             $(projectContainer[projectIndex + 1]).addClass('js-active')
+
+            if((projectIndex + 2) > (projectContainer.length - 1)) {
+                workPage.addClass('-footer-active');
+            }
+
             projectIndex ++;
         }, 300);
+
+        // scrollCount ++
     }
 
     function prevProject() {
-        console.log('scroll up', projectIndex);
         proyectIsChanging();
         $(projectContainer).addClass('js-overlay-up');
+
+        console.log(projectIndex);
 
         setTimeout(function() {
             $(projectContainer[projectIndex]).removeClass('js-active')
             $(projectContainer[projectIndex - 1]).addClass('js-active')
+
             projectIndex --;
+
+            if((projectIndex + 1) < (projectContainer.length)) {
+                workPage.removeClass('-footer-active');
+            }
+
         }, 300); 
+
     }
 
      

@@ -4,10 +4,9 @@
     $h: &;
 
     &__hero {
-        background: url('/images/home/hero.jpg') no-repeat center center / cover;
         position: relative;
         height: 80vh;
-        padding-top: 14vh;
+        padding-top: 15.3vh;
         z-index: 4000;
         display: flex;
         align-items: center;
@@ -16,21 +15,35 @@
             height: 100vh;
         }
 
-        &__col {
+        &__container {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            height: calc(80vh - 14vh);
-
+            position: relative;
+            
             @include mq(md) {
                 flex-direction: row;
                 align-items: center;
                 justify-content: space-between;
-                height: calc(100vh - 9.6vw);
+                // height: calc(100vh - 9.6vw);
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                width: 100vw;
+                min-height: 140%;
+                left: 50%;
+                top: 50%;
+                transform: translate3d(-50%, -50%, 0);
+                background: $white;
             }
         }
 
         &__logo {
+            position: relative;
+            z-index: 2;
+            filter: brightness(-1500%);
             
             @include mq(md) {
                 width: 40%;
@@ -50,14 +63,18 @@
         &__wrapper {
             display: flex;
             align-items: center;
+            background: $white;
+            position: relative;
+            z-index: 2;
+
         }
 
         &__slogan {
             text-transform: uppercase;
-            color: $white;
+            color: $black;
             margin-right: 10px;
             padding-right: 10px;
-            border-right: 1px solid $white;
+            border-right: 1px solid $black;
 
 
             span {
@@ -90,7 +107,7 @@
         }
 
         &__text {
-            color: $white;
+            color: $black;
             font-size: 14px;
 
             @include mq(md) {

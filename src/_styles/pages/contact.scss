@@ -17,6 +17,10 @@
             color: $white;
             font-size: 80px;
             margin: 0;
+
+            @include mq(md) {
+                font-size: 8vw;
+            }
         }
     }
 
@@ -70,6 +74,11 @@
             @include mq(md) {
                 width: 50%;
             }
+        }
+
+        &__text {
+            display: block;
+            text-decoration: none;
         }
     }
 
@@ -179,10 +188,13 @@
         }
     
         &__button {
+            @include trans;
+
+            cursor: pointer;
             display: block;
-            border: 1px solid $red;
             padding: 15px 0;
             text-align: center;
+            border: 1px solid $red;
             color: $red;
             font-weight: 900;
             background: none;
@@ -194,6 +206,11 @@
                 width: 50%;
     
             }
+
+            &:hover {
+                border: 1px solid ($red - #333);
+                color: ($red - #333);
+            }
         }
     }
 
@@ -202,7 +219,7 @@
         background: $black;
 
         @include mq(md) {
-            padding: 100px 0;
+            padding: 100px 0 60px 0;
         }
 
         &__title {
@@ -236,11 +253,20 @@
         &__text {
             font-size: 16px;
             margin: 0;
-            margin-bottom: 40px;
             color: $white;
+            margin-bottom: 20px;
+            @include mq(md) {
+                font-size: 20px;
+            }            
+        }
+
+        &__mail {
+            display: block;
+            color: $white;
+            margin-bottom: 40px;
+            text-decoration: none;
 
             @include mq(md) {
-                margin-bottom: 0;
                 font-size: 20px;
             }            
         }
