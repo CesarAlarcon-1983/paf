@@ -163,7 +163,7 @@
                 @include trans;
                 height: 50%;
                 width: auto;
-                pointer-events: none;
+                pointer-events: none;                
             }
 
             &.js-internal-logo {
@@ -256,6 +256,8 @@
         }
 
         a {
+            @include trans;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -269,6 +271,7 @@
             }
 
             h2 {
+                @include trans;
                 font-weight: 700;
                 margin: 0;
                 margin-bottom: 5px;
@@ -296,10 +299,11 @@
             margin: 0 15px;
 
             a {
+                @include trans;
                 text-decoration: none;
+                color: $black;
 
                 i {
-                    color: $black;
                     font-weight: 700;
                     font-size: 24px;
                 }
@@ -307,9 +311,7 @@
 
             &:hover {
                 a{
-                    i{
-                        color: $red;
-                    }
+                    color: $red;
                 }
             }
         }
@@ -393,6 +395,7 @@
         }
         #{$h}__button {
             background: transparent;
+            height: 5vw;
 
             .js-internal-logo {
                 height: auto;

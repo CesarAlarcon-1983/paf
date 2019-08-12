@@ -8,8 +8,12 @@ var Header = function() {
     var contactTitle = $('.contact__hero__title');
 
     menuOpen.on('click', function(){
+        // if (header.hasClass('-open')) {
+        //     header.removeClass('js-hovered');
+        // }
+
         header.toggleClass('-open');
-        body.toggleClass('-hideOverflow');
+        body.toggleClass('-hideOverflow');        
     });
 
     var language = [
@@ -39,8 +43,11 @@ var Header = function() {
     //     }
     // });
 
-    menuOpen.on('mouseenter mouseleave', function() {
-        header.toggleClass('js-hovered');
+    menuOpen.on('mouseenter mouseleave', function(e) {
+        console.log(e.type);
+        if (e.type !== 'click') {
+            header.toggleClass('js-hovered');
+        }
     });
 
     // Header Button Overlay
@@ -93,37 +100,67 @@ var Header = function() {
             isChanging = false;
             $(projectContainer).removeClass('js-overlay-down');
             $(projectContainer).removeClass('js-overlay-up');
-        }, 2000)
+        }, 1000)
     }
+
+    var ts;
+    $(window).on('touchstart', function(e) {
+        ts = e.originalEvent.touches[0].clientY;
+    });
+    
     $(window).on('scroll mousewheel touchmove', function(e) {
+        console.log (e);
 
-        if(!isChanging && e.originalEvent.deltaY > 0 && (projectIndex + 1) < projectContainer.length) {
-            this.console.log('scroll down', projectIndex);
-            proyectIsChanging();
+        if (e.type !== 'touchmove') {
+            if(!isChanging && e.originalEvent.deltaY > 0 && (projectIndex + 1) < projectContainer.length) {
+                nextProject();
+            }
             
-            $(projectContainer).addClass('js-overlay-down');
-
-            setTimeout(function() {
-                $(projectContainer[projectIndex]).removeClass('js-active')
-                $(projectContainer[projectIndex + 1]).addClass('js-active')
-                projectIndex ++;
-            }, 500);
-            
+            if(!isChanging && e.originalEvent.deltaY < 0 && projectIndex > 0) {
+                prevProject();
+            }
         }
-        
-        if(!isChanging && e.originalEvent.deltaY < 0 && projectIndex > 0) {
-            this.console.log('scroll up', projectIndex);
-            proyectIsChanging();
-            $(projectContainer).addClass('js-overlay-up');
 
-            setTimeout(function() {
-                $(projectContainer[projectIndex]).removeClass('js-active')
-                $(projectContainer[projectIndex - 1]).addClass('js-active')
-                projectIndex --;
-            }, 500);
+        if (e.type === 'touchmove') {
+            console.log('touch');
+            var te = e.originalEvent.changedTouches[0].clientY;
+
+            if (!isChanging && ts > te && (projectIndex + 1) < projectContainer.length) {
+                console.log('down');
+                nextProject();
+            }
             
+            if (!isChanging && ts < te && projectIndex > 0) {
+                console.log('up');
+                prevProject();
+            }
         }
     });
+
+    function nextProject() {
+        console.log('scroll down', projectIndex);
+        proyectIsChanging();
+        
+        $(projectContainer).addClass('js-overlay-down');
+
+        setTimeout(function() {
+            $(projectContainer[projectIndex]).removeClass('js-active')
+            $(projectContainer[projectIndex + 1]).addClass('js-active')
+            projectIndex ++;
+        }, 300);
+    }
+
+    function prevProject() {
+        console.log('scroll up', projectIndex);
+        proyectIsChanging();
+        $(projectContainer).addClass('js-overlay-up');
+
+        setTimeout(function() {
+            $(projectContainer[projectIndex]).removeClass('js-active')
+            $(projectContainer[projectIndex - 1]).addClass('js-active')
+            projectIndex --;
+        }, 300); 
+    }
 
      
     init();
