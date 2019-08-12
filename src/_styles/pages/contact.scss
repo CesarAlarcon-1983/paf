@@ -28,13 +28,21 @@
         }
 
         &__title {
-            display: inline-block;
-            padding-right: 100px;
-            border-top: 1px solid $corpBlack;
+            font-weight: 900;
+            color: $black;
             margin: 0;
-            padding-top: 20px;
             margin-bottom: 40px;
-        }
+            font-size: 30px;
+            
+            span {
+                font-weight: 100;
+                font-size: 16px;
+
+                @include mq(md) {
+                    font-size: 20px;
+                }
+            }
+        }        
 
         &__container {
             
@@ -85,14 +93,21 @@
         }
 
         &__title {
-            display: inline-block;
-            padding-right: 100px;
-            border-top: 1px solid $white;
-            margin: 0;
-            padding-top: 20px;
+            font-weight: 900;
             color: $white;
+            margin: 0;
             margin-bottom: 40px;
-        }
+            font-size: 30px;
+            
+            span {
+                font-weight: 100;
+                font-size: 16px;
+
+                @include mq(md) {
+                    font-size: 20px;
+                }
+            }
+        }        
 
         &__main-title {
             width: 100%;
@@ -191,14 +206,21 @@
         }
 
         &__title {
-            display: inline-block;
-            padding-right: 100px;
-            border-top: 1px solid $white;
-            margin: 0;
-            padding-top: 20px;
-            margin-bottom: 40px;
+            font-weight: 900;
             color: $white;
-        }
+            margin: 0;
+            margin-bottom: 40px;
+            font-size: 30px;
+
+            span {
+                font-weight: 100;
+                font-size: 16px;
+
+                @include mq(md) {
+                    font-size: 20px;
+                }
+            }
+        }        
 
         &__main-title {
             margin: 0;
