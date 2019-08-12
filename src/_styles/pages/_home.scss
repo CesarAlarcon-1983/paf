@@ -9,10 +9,11 @@
         height: 80vh;
         padding-top: 14vh;
         z-index: 4000;
+        display: flex;
+        align-items: center;
 
         @include mq(md) {
             height: 100vh;
-            padding-top: 9.6vw;
         }
 
         &__col {
@@ -376,8 +377,13 @@
                 top: 50%;
                 left: 50%;
                 transform: translate3d(-50%, -50%, 0);
-                height: 110%;
-                width: auto;
+                height: auto;
+                width: 100%;
+
+                @include mq(md){
+                    height: 110%;
+                    width: auto;
+                }
             }
         }
 
