@@ -4,6 +4,7 @@
     $h: &;
 
     &__hero {
+        background: $white;
         position: relative;
         height: 80vh;
         padding-top: 15.3vh;
@@ -24,7 +25,7 @@
             @include mq(md) {
                 flex-direction: row;
                 align-items: center;
-                justify-content: space-between;
+                justify-content: space-around;
                 // height: calc(100vh - 9.6vw);
             }
 
@@ -43,7 +44,6 @@
         &__logo {
             position: relative;
             z-index: 2;
-            filter: brightness(-1500%);
             
             @include mq(md) {
                 width: 40%;
@@ -116,6 +116,29 @@
 
             span {
                 font-weight: 900;
+            }
+        }
+
+        &__slogan-scroll {
+            display: block;
+            position: absolute;
+            left:50%;
+            bottom: 0;
+            transform: translateX(-55%);
+            padding-bottom: 80px;
+            text-decoration: none;
+            font-size: 18px;
+
+            &:after {
+                content: '';
+                position: absolute;
+                left:0;
+                right: 0;
+                bottom: 0;
+                height: 50px;
+                width: 1px;
+                margin: auto;
+                background: $corpBlack;
             }
         }
     }
@@ -192,6 +215,11 @@
             margin-bottom: 40px;
             font-size: 30px;
             
+            a {
+                text-decoration: none;
+                color: $white;
+            }
+            
             @include mq(md) {
                 font-size: 50px;
             }
@@ -218,14 +246,17 @@
             overflow: hidden;
             position: relative;
             margin-bottom: 30px;
+            background: $black;
+            display: block;
 
             img {
+                @include trans;
                 position: absolute;
                 top: 50%;
                 left: 50%;
                 transform: translate3d(-50%, -50%, 0);
-                width: 100%;
-                height: auto;
+                height: 100%;
+                width: auto;
                 min-height: 100%;
             }
 
@@ -246,12 +277,28 @@
                     }
                 }
             }
+
+            &:hover {
+                img {
+                    opacity: .7;
+                }
+
+                .home__work__wrapper {
+                    transform: translateY(0);
+                }
+
+                .home__work__wrapper-text {
+                    opacity: 1;
+                }
+            }
         }
 
         &__wrapper {
+            @include trans;
             position: absolute;
             top: 40px;
             left: 40px;
+            transform: translateY(100%);
         }
 
         &__wrapper-title {
@@ -262,10 +309,12 @@
         }
 
         &__wrapper-text  {
+            @include trans;
             color: $white;
             margin: 0;
             text-decoration: underline;
             text-transform: uppercase;
+            opacity: 0;
         }
     }
 
@@ -282,6 +331,10 @@
             margin: 0;
             margin-bottom: 40px;
             font-size: 30px;
+
+            a {
+                text-decoration: none;
+            }
             
             @include mq(md) {
                 font-size: 50px;
@@ -306,6 +359,8 @@
         &__container {
             width: 100%;
             overflow: hidden;
+            display: block;
+            text-decoration: none;
             
             @include mq(md) {
                 height: 30vw;

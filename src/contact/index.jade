@@ -59,7 +59,7 @@ block content
                                 h2.contact__location__main-title España.
                                 p.contact__location__text Distrito del Ensanche, Barcelona
                                 a.contact__location__mail(href="mailto:es@pafcollective.com.ar" target="_blank") es@pafcollective.com.ar
-        section.contact__form
+        form.contact__form#contact(action="/enviar.php" method="post" enctype="multipart/form-data")
             .container
                 .row
                     .col-24.col-md-20.offset-md-2
@@ -69,16 +69,19 @@ block content
                             .col-24.col-md-16
                                     h2.contact__form__main-title En !PAF una de las maneras en que vivimos nuestra misión de crear marcas y hacer crecer negocios, es mediante nuestra iniciativa para organizaciones sin fines de lucro: !PAF For Non Profit.
                                     p.contact__form__text A través de nuestra iniciativa !PAF FOR NON PROFIT (!P4NP) 2 veces al año (si podemos más, mejor!) donamos horas de consultoría y ejecución para desarrollar marcas y eventos sociales en el medio digital. Queremos trabajar junto a ONGs inspiradoras que acompañen comunidades donde ofrecemos servicios para que puedan lograr mucho más impacto.
-                            .col-24.col-md-8.offset-md-8
-                                input.contact__form__input(placeholder="Nombre y Apellido" required)
-                                input.contact__form__input(placeholder="Teléfono")
-                                input.contact__form__input(placeholder="Email")
-                                input.contact__form__input(placeholder="Web")
-                                input.contact__form__input(placeholder="ONG")
-                            .col-24.col-md-8
-                                textarea.contact__form__input.contact__form__input--textarea(placeholder="Mensaje")
-                            .col-24.col-md-8.offset-md-8
-                                button.contact__form__button Enviar
+                            .col-24.col-md-16.offset-md-8.js-message.js-hidden
+                                h2 Mensaje enviado correctamente.
+                            .col-24.col-md-8.offset-md-8.js-fields                                
+                                input.contact__form__input(placeholder="Nombre y Apellido" type="text" required name="nombre")
+                                input.contact__form__input(placeholder="Teléfono" type="text" name="telefono")
+                                input.contact__form__input(placeholder="Email" required type="email" name="email")
+                                input.contact__form__input(placeholder="Web" type="text" name="web")
+                                input.contact__form__input(placeholder="ONG" type="text" name="ong")
+                                
+                            .col-24.col-md-8.js-fields
+                                textarea.contact__form__input.contact__form__input--textarea(placeholder="Mensaje" name="consulta" required)
+                            .col-24.col-md-8.offset-md-8.js-fields
+                                button.contact__form__button(type="submit") Enviar
 
 
 

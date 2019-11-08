@@ -182,6 +182,48 @@ var Header = function() {
 
      
     init();
+
+    $('a[href*="#"]')
+    // Remove links that don't actually link to anything
+    .not('[href="#buscar"]')
+    .not('[href="#"]')
+    .not('[href="#0"]')
+    .not('[href="#registro"]')
+    .not('[href="#login"]')
+    .click(function(event) {
+        // On-page links
+        if (
+            location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+            &&
+            location.hostname == this.hostname
+        ) {
+          // Figure out element to scroll to
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            // Does a scroll target exist?
+            if (target.length) {
+                // Only prevent default if animation is actually gonna happen
+                event.preventDefault();
+                $('html, body').animate({
+                    scrollTop: target.offset().top + -50
+                }, 1000, function() {
+                // Callback after animation
+                // Must change focus!
+                    var $target = $(target);
+                    $target.focus();
+                });
+            }
+        }
+    });
+
+    var contactPage = $('.contact');
+
+    if (contactPage.length > 0) {
+        if (location.hash === '#contact') {
+            $('.js-fields').addClass('js-hidden');
+            $('.js-message').removeClass('js-hidden');
+        }
+    }
 };
 
 module.exports = Header;

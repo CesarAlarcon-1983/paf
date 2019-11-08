@@ -271,4 +271,15 @@
             }            
         }
     }
+
+    .js-hidden {
+        display: none !important;
+    }
+
+    .js-message {
+        h2 {
+            color: $white;
+            font-size: 32px;
+        }
+    }
 }

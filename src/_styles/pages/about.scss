@@ -148,7 +148,7 @@
             color: $white;
             
             &:not(:last-child) {
-                border-bottom: 1px solid $darkGray;
+                border-bottom: 1px solid $darkestGray;
             }
         }
     }

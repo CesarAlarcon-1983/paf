@@ -18,6 +18,11 @@ head
         link(rel='stylesheet', href= baseUrl + 'styles/main.css')
 
 body
+    |<!-- Global site tag (gtag.js) - Google Analytics -->
+    |<script async src="https://www.googletagmanager.com/gtag/js?id=UA-149018601-1"></script>
+    |<script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-149018601-1'); </script>
+
+            
     <!--[if lt IE 11]>
     <p class='browsehappy'>You are using an <strong>outdated</strong> browser. Please <a href='http://browsehappy.com/'>upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -37,5 +42,25 @@ body
         
         script(src="//cdnjs.cloudflare.com/ajax/libs/wow/0.1.12/wow.min.js")
         script new WOW().init();
+
+    // Load Facebook SDK for JavaScript
+    #fb-root
+    script.
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v4.0'
+        });
+      };
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    // Your customer chat code
+    .fb-customerchat(attribution='setup_tool', page_id='591839517983143', theme_color='#FF005B', logged_in_greeting="We are here for you! Let's talk!", logged_out_greeting="We are here for you! Let's talk!")
+
 
 </html>

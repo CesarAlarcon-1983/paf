@@ -28,12 +28,11 @@
     &.js-hovered {
         &:before {
             @include mq(md) {
-                border-top: 7vw solid $white;
-                border-left: 3.5vw solid $white;
-                border-right: 3.5vw solid $white;
-                border-bottom: 3.5vw solid $white;
-            }
-    
+                border-top: 7vw solid $lightGray;
+                border-left: 3.5vw solid $lightGray;
+                border-right: 3.5vw solid $lightGray;
+                border-bottom: 3.5vw solid $lightGray;
+            }    
         }
     }
 
@@ -42,14 +41,16 @@
         
         position: absolute;
         top: 4.3vw;
-        left: 50%;
-        transform: translateX(-50%);
+        left: 0;
+        right: 0;
+        margin: auto;
         width: 60px;
         height: 60px;
         z-index: 5000;
-        background: $white;
+        background: $lightGray;
         overflow: hidden;
         cursor: pointer;
+        animation: clickMe 5s linear infinite;
 
         @include mq(md) {
             width: 75px;
@@ -57,6 +58,7 @@
         }
 
         &:hover {
+            animation: none;
             .js-main-logo {
                 filter: brightness(1000%);
                 z-index: 6000;
@@ -308,6 +310,7 @@
         #{$h}__button {
             background: transparent;
             height: 5vw;
+            animation: none;
 
             .js-internal-logo {
                 height: auto;
@@ -433,5 +436,12 @@ $timing-fn: ease;
     left: 0;
     pointer-events: none;
     background-color: $red;
+  }
+
+  @keyframes clickMe {
+      0% {background: $lightestGray}
+      10% {background: $red}
+      20% {background: $lightestGray}
+      100% {background: $lightestGray}
   }
   
