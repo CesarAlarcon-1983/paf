@@ -2,7 +2,101 @@ extends ../_layouts/base
 
 block config
   //- Correct base url pathing for this page
-  - var baseUrl = '../'
+  - var baseUrl = '../';
 
 block content
-  p bravecto page
+  main.projects.projects--bravecto
+    section.projects--bravecto__hero
+      a.projects--bravecto__hero__scroll(href="#zoom-in")
+        p.projects--bravecto__hero__scroll-text Descubrilo
+      .container
+        .row
+          .col-24.col-md-6
+            .projects--bravecto__hero__container
+              p.projects--bravecto__hero__subtitle MSD Animal Health.
+          .col-24.col-md-10
+              h3.projects--bravecto__hero__title ¡Perrea<br>Boby!
+              p.projects--bravecto__hero__text Protegemos la sanidad de nuestro mejor amigo y su hogar.
+          .col-24.col-md-8
+            .projects--bravecto__hero__image
+              img(src="/images/projects/bravecto/perrito.png")
+    
+    section.projects--bravecto__zoom-in#zoom-in
+      .container
+        .row
+          .col-24.col-md-6
+            p.projects--bravecto__zoom-in__subtitle Zoom in
+          .col-24.col-md-10
+            h3.projects--bravecto__zoom-in__title Una propuesta de marca totalmente diferente a lo que se venía viendo.
+            p.projects--bravecto__zoom-in__text El mercado necesita innovar, mostrar algo nuevo, distinto, revolucionario. El enfoque y storytelling digital es nuestro principal diferencial.
+          .col-24.col-md-8
+            .projects--bravecto__zoom-in__image
+              img(src="/images/projects/bravecto/iphone.png")
+    section.projects--bravecto__video
+      .projects--bravecto__video__container
+        iframe(src="https://www.youtube.com/embed/IgKbx1SMEwE")
+
+    section.projects--bravecto__storytelling
+      .projects--bravecto__storytelling__container
+        .projects--bravecto__storytelling__col
+        .projects--bravecto__storytelling__col
+          .projects--bravecto__storytelling__subcol
+            iframe(src="https://www.youtube.com/embed/IgKbx1SMEwE")
+          .projects--bravecto__storytelling__subcol
+            iframe(src="https://www.youtube.com/embed/IgKbx1SMEwE")
+      .container
+        .row
+          .col-24.col-md-12
+            .projects--bravecto__storytelling__content
+              h3.projects--bravecto__storytelling__subtitle Content creation
+              h2.projects--bravecto__storytelling__title Lanzamos su primer campaña de marketing en 70 años, 100% digital.
+              p.projects--bravecto__storytelling__text La primera vez es más difícil. La primera vez tiene muchas expectativas. Para esta compañia de seguros "grande" local, agregamos valir por humor y una idea de "grancarta legal".
+
+    section.projects--bravecto__dinamic-content
+      .projects--bravecto__dinamic-content__image
+        img(src="/images/projects/bravecto/iphone.png")
+      .container
+        .row
+          .col-24.col-md-12
+            .projects--bravecto__dinamic-content__content
+              h3.projects--bravecto__dinamic-content__subtitle Content creation
+              h2.projects--bravecto__dinamic-content__title Generando contenido dinámico y especializado para canales sociales.
+              p.projects--bravecto__dinamic-content__text Cada campaña venía con sus touchpoint en distintos formatos para llegar a la mayor cantidad de audiencia y de la forma más eficiente posible.
+
+    section.projects--bravecto__valor
+      .projects--bravecto__valor__container
+        .projects--bravecto__valor__col
+        .projects--bravecto__valor__col
+          iframe(src="https://www.youtube.com/embed/IgKbx1SMEwE")
+      .container
+        .row
+          .col-24.col-md-12
+            .projects--bravecto__valor__content
+              h2.projects--bravecto__valor__title Agregamos valor, conectando al consumidor con el veterinario.
+
+    section.projects--bravecto__facts
+      .container
+        .row
+          .col-24
+            h3.projects--bravecto__facts__title Números
+          .col-24.col-md-12
+            .projects--bravecto__facts__container
+              h3.projects--bravecto__facts__container-title Membership growth:
+              span.projects--bravecto__facts__container-number 5k
+          .col-24.col-md-12
+            .projects--bravecto__facts__container
+              h3.projects--bravecto__facts__container-title Inspire affinity.
+              p.projects--bravecto__facts__container-text Más info para sumar: Through us forn Nonprofit (P4NP) initiative, we demonstrate our commitment to helping our global and local communities thrive. Our mission is to build brands, transform businesses and move.
+
+          .col-24.col-md-12
+            .projects--bravecto__facts__container
+              h3.projects--bravecto__facts__container-title Any movie.
+              p.projects--bravecto__facts__container-text Más info para sumar: Through us forn Nonprofit (P4NP) initiative, we demonstrate our commitment to helping our global and local communities thrive. Our mission is to build brands, transform businesses and move.
+
+          .col-24.col-md-12
+            .projects--bravecto__facts__container
+              h3.projects--bravecto__facts__container-title Mobile revenue growth:
+              span.projects--bravecto__facts__container-number 45%
+
+
+

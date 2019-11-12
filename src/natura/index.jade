@@ -4,6 +4,116 @@ block config
   //- Correct base url pathing for this page
   - var baseUrl = '../';
 
+include ../_modules/slider/slider
+
 block content
   main.projects.projects--natura
     section.projects.projects--natura__hero
+      a.projects--natura__hero__scroll(href="#objetivos")
+        p.projects--natura__hero__scroll-text Descubrilo
+      .container
+        .row
+          .col-24
+            p.projects--natura__hero__text Natura
+        .row
+          .col-24
+            .projects--natura__hero__container
+              h2.projects--natura__hero__container-title Estilo<br>Natura
+              p.projects--natura__hero__container-text Acompañando la transformación<br>digital de Natura
+
+    section.projects.projects--natura__objetivos#objetivos
+      .container
+        .row
+          .col-24.col-md-12
+            .projects.projects--natura__objetivos__container
+              h3.projects.projects--natura__objetivos__title Objetivos
+              p.projects.projects--natura__objetivos__text <strong>Transformación digital.</strong> Natura nos encomienda, entre otras cosas, acompañar a sus consultores en sus procesos de venta, así como también el uso de distintos formatos audiovisuales y gráficos, para generar un mayor engagement y ventas adicionales en sus canales digitales.
+          .col-24.col-md-4
+            .projects.projects--natura__objetivos__container
+              h3.projects.projects--natura__objetivos__title Equipo
+              ul.projects.projects--natura__objetivos__list
+                li.projects.projects--natura__objetivos__item !PAF
+                li.projects.projects--natura__objetivos__item Gianina Michelotti
+                li.projects.projects--natura__objetivos__item Dante Interactive
+                li.projects.projects--natura__objetivos__item procra
+
+          .col-24.col-md-4
+            .projects.projects--natura__objetivos__container
+              h3.projects.projects--natura__objetivos__title Entregables
+              ul.projects.projects--natura__objetivos__list
+                li.projects.projects--natura__objetivos__item Estrategia & Planificación
+                li.projects.projects--natura__objetivos__item Planificación
+                li.projects.projects--natura__objetivos__item Contenido
+                li.projects.projects--natura__objetivos__item Desarrollo UI/UX
+                li.projects.projects--natura__objetivos__item Tutoriales audiovisuales
+
+          .col-24.col-md-4
+            .projects.projects--natura__objetivos__container
+              h3.projects.projects--natura__objetivos__title Medios
+              ul.projects.projects--natura__objetivos__list
+                li.projects.projects--natura__objetivos__item Redes Sociales
+                li.projects.projects--natura__objetivos__item Mailings
+                li.projects.projects--natura__objetivos__item Off Line
+
+    section.projects.projects--natura__capacitacion
+      .container
+        .row
+          .col-24.col-md-12
+            .projects.projects--natura__capacitacion__content
+              h2.projects.projects--natura__capacitacion__title Cursos para las herramientas internas de capacitación.
+              p.projects.projects--natura__capacitacion__text Utilizamos distintos formatos de comunucación, creatividad y recursos interactivos, que fijen la gran cantidad de SKU con cada uno de sus diferenciales de marca.
+          .col-24.col-md-12
+            .projects.projects--natura__capacitacion__image
+              img(src="/images/projects/natura/squares.png")
+
+    section.projects--natura__mosaic
+      .container
+        .row
+          .col-24
+            h3.projects.projects--natura__mosaic__title Redacción y diseño de piezas unificando el tono, marca con claros argumentos de ventas.
+            p.projects.projects--natura__mosaic__text Redacción y diseño de piezas para las supervisoras, para comunicar en sus canales de redes sociales el próximo encuentro.
+          .col-24.col-md-16
+            .row
+              .col-24.col-md-12
+                .projects.projects--natura__mosaic__image
+                  img(src="/images/projects/natura/mosaic-1.png")
+              .col-24.col-md-12
+                .projects.projects--natura__mosaic__image
+                  img(src="/images/projects/natura/mosaic-2.png")
+              .col-24.col-md-16
+                .projects.projects--natura__mosaic__image.projects--natura__mosaic__image--big
+                  img(src="/images/projects/natura/mosaic-4.png")
+              .col-24.col-md-8
+                .projects.projects--natura__mosaic__image.projects--natura__mosaic__image--small
+                  img(src="/images/projects/natura/mosaic-5.png")
+              .col-24.col-md-12
+                .projects.projects--natura__mosaic__image.projects
+                  img(src="/images/projects/natura/mosaic-7.png")
+              .col-24.col-md-12
+                .projects.projects--natura__mosaic__image
+                  img(src="/images/projects/natura/mosaic-8.png")
+
+          .col-24.col-md-8
+            .row
+              .col-24
+                .projects.projects--natura__mosaic__image
+                  img(src="/images/projects/natura/mosaic-3.png")
+              .col-24
+                .projects.projects--natura__mosaic__image.projects--natura__mosaic__image--double
+                  img(src="/images/projects/natura/mosaic-6.png")
+              .col-24
+                .projects.projects--natura__mosaic__image.projects--natura__mosaic__image--half
+                  img(src="/images/projects/natura/mosaic-9.png")
+
+    section.projects--natura__brochure
+      .container
+        .row
+          .col-24
+            .projects--natura__brochure__image
+              img(src="/images/projects/natura/brochure.png")
+
+    section.projects--natura__videos
+      +slider('.projects.projects--natura__videos__slider')
+        each video in site.data.videos.natura
+          .projects.projects--natura__videos__slide
+            iframe(src=video)
