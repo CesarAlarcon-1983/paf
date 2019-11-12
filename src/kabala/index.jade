@@ -1,0 +1,113 @@
+extends ../_layouts/base
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../';
+
+include ../_modules/slider/slider
+
+block content
+  main.projects.projects--kabala
+    section.projects.projects--kabala__hero
+      a.projects--kabala__hero__scroll(href="#objetivos")
+        p.projects--kabala__hero__scroll-text Descubrilo
+      .container
+        .row
+          .col-12
+            p.projects--kabala__hero__text
+              |Intralot
+              br
+              br
+              span Impulsamos la lotería más masiva<br> del Perú con una idea común.
+          .col-12
+            .projects--kabala__hero__logo
+              img(src="/images/projects/kabala/logo.png")
+        .row
+          .col-24
+            .projects--kabala__hero__container
+              h2.projects--kabala__hero__container-title ¡Juega tu Kábala!
+
+    section.projects.projects--kabala__objetivos#objetivos
+      .container
+        .row
+          .col-24.col-md-12
+            .projects.projects--kabala__objetivos__container
+              h3.projects.projects--kabala__objetivos__title Objetivos
+              p.projects.projects--kabala__objetivos__text <strong>Branding.</strong> Promocionar Kábala, el producto más económico y popular de Intralot, en el medio digital enfocados principalmente en Facebook y YouTube, construyendo branding e incrementando la propuesta de valor
+          .col-24.col-md-4
+            .projects.projects--kabala__objetivos__container
+              h3.projects.projects--kabala__objetivos__title Equipo
+              ul.projects.projects--kabala__objetivos__list
+                li.projects.projects--kabala__objetivos__item !PAF
+                li.projects.projects--kabala__objetivos__item High End Perú
+                li.projects.projects--kabala__objetivos__item Frubis
+
+          .col-24.col-md-4
+            .projects.projects--kabala__objetivos__container
+              h3.projects.projects--kabala__objetivos__title Entregables
+              ul.projects.projects--kabala__objetivos__list
+                li.projects.projects--kabala__objetivos__item Estrategia & Planificación
+                li.projects.projects--kabala__objetivos__item Concepto
+                li.projects.projects--kabala__objetivos__item Data-Driven Creativity
+                li.projects.projects--kabala__objetivos__item Contenido
+
+          .col-24.col-md-4
+            .projects.projects--kabala__objetivos__container
+              h3.projects.projects--kabala__objetivos__title Medios
+              ul.projects.projects--kabala__objetivos__list
+                li.projects.projects--kabala__objetivos__item Mailings
+                li.projects.projects--kabala__objetivos__item Pauta Branding
+
+    section.projects.projects--kabala__videos
+      +slider('.projects.projects--kabala__videos__slider')
+        each video in site.data.videos.kabala
+          .projects.projects--kabala__videos__slide
+            iframe(src=video)
+
+    section.projects.projects--kabala__facts
+      .container
+        .row
+          .col-24.col-md-12
+            .projects.projects--kabala__facts__wrapper
+              h3.projects.projects--kabala__facts__title ¿Eres Kabalero?
+              p.projects.projects--kabala__facts__text Para la campaña de Branding "Conejo" y "Chamán" fueron los spots con mejor performance. El rendimiento general fue muy bueno con una gran participación positiva y un fuerte engagement.
+
+          .col-24.col-md-12
+            .row
+              .col-24
+                .projects.projects--kabala__facts__group.projects.projects--kabala__facts__group--margin
+                .row
+                  .col-12
+                    span.projects.projects--kabala__facts__percentage 32%
+                  .col-12
+                    .projects.projects--kabala__facts__container
+                      .projects.projects--kabala__facts__container-wrapper
+                        h3.projects.projects--kabala__facts__container-title Reproducción media
+                        p.projects.projects--kabala__facts__text 15-20% de la industria.<br> 1.025.539 reproducciones 10"
+        .row
+          .col-24.col-md-12
+            .projects.projects--kabala__facts__group
+            .row
+              .col-24
+                span.projects.projects--kabala__facts__percentage 1.900.000
+              .col-24.col-md-12
+                .projects.projects--kabala__facts__container
+                  .projects.projects--kabala__facts__container-wrapper
+                    h3.projects.projects--kabala__facts__container-title Interacciones
+              .col-24.col-md-12
+                .projects.projects--kabala__facts__container
+                  .projects.projects--kabala__facts__container-wrapper
+                    p.projects.projects--kabala__facts__text Primer mes de campaña.<br>En su totalidad positivas.
+          .col-24.col-md-12
+            .projects.projects--kabala__facts__group
+            .row
+              .col-24
+                span.projects.projects--kabala__facts__percentage 2.690.000
+              .col-24.col-md-12
+                .projects.projects--kabala__facts__container
+                  .projects.projects--kabala__facts__container-wrapper
+                    h3.projects.projects--kabala__facts__container-title Alcance
+              .col-24.col-md-12
+                .projects.projects--kabala__facts__container
+                  .projects.projects--kabala__facts__container-wrapper
+                    p.projects.projects--kabala__facts__text Primer mes de campaña.<br>En su totalidad positivas.

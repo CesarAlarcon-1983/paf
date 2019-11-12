@@ -1,0 +1,150 @@
+extends ../_layouts/base
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../';
+
+include ../_modules/slider/slider
+
+block content
+  main.projects.projects--meridional
+    section.projects--meridional__hero
+      .projects--meridional__hero__image
+        img(src="/images/projects/meridional/carro.png")
+      a.projects--meridional__hero__scroll(href="#campana")
+        p.projects--meridional__hero__scroll-text Descubrilo
+      .container
+        .row
+          .col-12
+            p.projects--meridional__hero__text FAIRFAX / Meridional Seguros
+          .col-12
+            .projects--meridional__hero__logo
+              img(src="/images/projects/meridional/logo.png")
+        .row
+          .col-24.col-md-12
+            .projects--meridional__hero__container
+              h2.projects--meridional__hero__container-title Letra
+              h2.projects--meridional__hero__container-title grande
+          .col-24.col-md-12
+            .projects--meridional__hero__container
+              p.projects--meridional__hero__container-text Juntos impulsamos<br>la primer campaña<br>digital de su historia
+ 
+    section.projects.projects--meridional__campana#campana
+      .projects.projects--meridional__campana__container
+        .projects.projects--meridional__campana__col
+        .projects.projects--meridional__campana__col
+          img(src="/images/projects/meridional/square.jpg")
+      .container
+        .row
+          .col-24.col-md-12
+            .projects.projects--meridional__campana__content
+              h2.projects.projects--meridional__campana__title Lanzamos su primer campaña de marketing en 70 años, 100% digital.
+              p.projects.projects--meridional__campana__text La primera vez es más difícil. La primera vez tiene muchas expectativas. Para esta compañia de seguros "grande" local, agregamos valir por humor y una idea de "grancarta legal".
+
+    section.projects.projects--meridional__objetivos
+      .container
+        .row
+          .col-24.col-md-12
+            .projects.projects--meridional__objetivos__container
+              h3.projects.projects--meridional__objetivos__title Objetivos
+              p.projects.projects--meridional__objetivos__text <strong>Branding.</strong> Construir la marca con un mensaje innovador destacando los beneficios del producto, tanto en su aplicación y eficacia. Reducir la distancia entre veterinario-consimidor y veterinarios-MSD por medio de la tecnología y el canal digital.
+          .col-24.col-md-4
+            .projects.projects--meridional__objetivos__container
+              h3.projects.projects--meridional__objetivos__title Equipo
+              ul.projects.projects--meridional__objetivos__list
+                li.projects.projects--meridional__objetivos__item !PAF
+                li.projects.projects--meridional__objetivos__item Frubis
+                li.projects.projects--meridional__objetivos__item Nice Watch
+                li.projects.projects--meridional__objetivos__item Ratio Fx
+
+          .col-24.col-md-4
+            .projects.projects--meridional__objetivos__container
+              h3.projects.projects--meridional__objetivos__title Entregables
+              ul.projects.projects--meridional__objetivos__list
+                li.projects.projects--meridional__objetivos__item Estrategia & Planificación
+                li.projects.projects--meridional__objetivos__item Concepto
+                li.projects.projects--meridional__objetivos__item Branding
+                li.projects.projects--meridional__objetivos__item Contenido
+                li.projects.projects--meridional__objetivos__item Desarrollo UI/UX
+
+          .col-24.col-md-4
+            .projects.projects--meridional__objetivos__container
+              h3.projects.projects--meridional__objetivos__title Medios
+              ul.projects.projects--meridional__objetivos__list
+                li.projects.projects--meridional__objetivos__item Redes Sociales
+                li.projects.projects--meridional__objetivos__item Mailings
+                li.projects.projects--meridional__objetivos__item Performance
+                li.projects.projects--meridional__objetivos__item Data-Driven Branding
+                li.projects.projects--meridional__objetivos__item Off Line
+
+    section.projects.projects--meridional__videos
+      +slider('.projects.projects--meridional__videos__slider')
+        each video in site.data.videos.meridional
+          .projects.projects--meridional__videos__slide
+            iframe(src=video)
+  
+    section.projects.projects--meridional__mosaic
+      .container
+        .row
+          .col-24.col-md-6
+            .projects.projects--meridional__mosaic__container
+              h3.projects.projects--meridional__mosaic__title Creamos contenido dinámico para cada unidad de negocio.
+          .col-24.col-md-18
+            .projects.projects--meridional__mosaic__image
+              img(src="/images/projects/meridional/mosaic.png")
+ 
+    section.projects.projects--meridional__facts
+      .container
+        .row
+          .col-24.col-md-12
+            .projects.projects--meridional__facts__wrapper
+              h3.projects.projects--meridional__facts__title Inspirando confianza en cada momento de la vida.
+              p.projects.projects--meridional__facts__text Una propuesta creativa elegante y con humor permite a los usuarios identificarse con la marca y diferenciarla del resto de la industria, buscando lograr un mayor interés.
+
+          .col-24.col-md-12
+            .row
+              .col-24
+                .projects.projects--meridional__facts__group.projects.projects--meridional__facts__group--margin
+                .row
+                  .col-12
+                    span.projects.projects--meridional__facts__percentage 10%
+                  .col-12
+                    .projects.projects--meridional__facts__container
+                      .projects.projects--meridional__facts__container-wrapper
+                        h3.projects.projects--meridional__facts__container-title Brand Lift
+                        p.projects.projects--meridional__facts__text 2018
+              .col-24
+                .projects.projects--meridional__facts__group
+                .row
+                  .col-12
+                    span.projects.projects--meridional__facts__percentage 45%
+                  .col-12
+                    .projects.projects--meridional__facts__container
+                      .projects.projects--meridional__facts__container-wrapper
+                        h3.projects.projects--meridional__facts__container-title Overall View Rate
+                        p.projects.projects--meridional__facts__text Google Dixit: "the standar is up to 20 seconds only 10% of users are still watching the ad."
+        .row
+          .col-24.col-md-12
+            .projects.projects--meridional__facts__group
+            .row
+              .col-24.col-md-12
+                .projects.projects--meridional__facts__image
+                  img(src="/images/projects/meridional/thumb.png")
+              .col-24.col-md-12
+                .projects.projects--meridional__facts__container
+                  .projects.projects--meridional__facts__container-wrapper
+                    h3.projects.projects--meridional__facts__container-title View Rate
+                    p.projects.projects--meridional__facts__text Brand objetive: 10%-20 sec.
+                  span.projects.projects--meridional__facts__container-percentage 41%
+
+          .col-24.col-md-12
+            .projects.projects--meridional__facts__group
+            .row
+              .col-12
+                span.projects.projects--meridional__facts__percentage 96%
+              .col-12
+                .projects.projects--meridional__facts__container
+                  .projects.projects--meridional__facts__container-wrapper
+                    h3.projects.projects--meridional__facts__container-title Search
+                    p.projects.projects--meridional__facts__text Google Search in preferred segments
+

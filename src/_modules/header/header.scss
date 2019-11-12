@@ -51,7 +51,8 @@
         overflow: hidden;
         cursor: pointer;
         animation: clickMe 5s linear infinite;
-
+        animation-delay: 5s;
+        
         @include mq(md) {
             width: 75px;
             height: 75px;
@@ -107,10 +108,6 @@
 
         }
     }
-
-    // &__logo {
-    //     display: none;
-    // }
 
     &__nav {
         @include trans;

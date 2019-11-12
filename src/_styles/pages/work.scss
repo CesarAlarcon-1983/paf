@@ -107,6 +107,9 @@
         color: $white;
         font-weight: 900;
         margin: 0;
+        display: block;
+        text-decoration: none;
+        margin-bottom: 20px;
         
         @include mq(md) {
             font-size: 120px;
