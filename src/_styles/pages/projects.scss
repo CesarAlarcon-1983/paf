@@ -1010,7 +1010,11 @@
         &__hero {
             height: 100vh;
             position: relative;
-            background: url('/images/projects/natura/hero.jpg') no-repeat center center / cover;
+            background: url('/images/projects/natura/hero.jpg') no-repeat 62% center / cover;
+
+            @include mq(md) {
+              background: url('/images/projects/natura/hero.jpg') no-repeat center center / cover;
+            }
 
             &__scroll {
                 position: absolute;
