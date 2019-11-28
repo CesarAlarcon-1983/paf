@@ -1,0 +1,192 @@
+.carrer-detail {
+    &__hero {
+        height: 80vh;
+        background: $black;
+        padding-top: 100px;
+        position: relative;
+
+        @include mq(md) {
+            padding-top: 4.3vw;
+        }
+
+        &__container {
+            height: 80vh;
+        }
+
+        &__uppertitle {
+            color: $white;
+            position: relative;
+            padding-top: 20px;
+            margin: 0;
+            font-size: 20px;
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 200px;
+                height: 1px;
+                background: $white;
+            }
+        }
+
+        &__title {
+            font-size: 60px;
+            color: $white;
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+
+            @include mq(md) {
+                font-size: 120px;
+            }
+        }
+    }
+
+    &__apply {
+        padding: 50px 0;
+
+        @include mq(md) {
+            padding: 100px 0;
+        }
+
+        &__uppertitle {
+            color: $black;
+            position: relative;
+            padding-top: 20px;
+            margin: 0;
+            font-size: 20px;
+            margin-bottom: 40px;
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 200px;
+                height: 1px;
+                background: $black;
+            }
+        }
+
+        &__text {
+            margin: 0;
+            margin-bottom: 40px;
+            font-size: 16px;
+
+            @include mq(md) {
+                font-size: 20px;
+            }
+        }
+
+        &__subtitle { 
+            color: $corpBlack;
+            margin-bottom: 40px;
+        }
+
+        &__list {
+            list-style: disc;
+            list-style-position: outside;
+            padding-left: 20px;
+
+            @include mq(md) {
+                padding-left: 40px;
+            }
+        }
+
+        &__item {
+            margin-bottom: 40px;
+            font-size: 16px;
+
+            @include mq(md) {
+                font-size: 20px;
+            }
+        }
+
+        &__form-title {
+            color: $corpBlack;
+            font-size: 30px;
+            font-weight: 900;
+
+            @include mq(md) {
+                font-size: 50px;
+            }
+        }
+
+
+        &__form {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        &__form-group {
+            height: 60px;
+            margin-bottom: 20px;
+            width: 100%;
+
+            @include mq(md) {
+                margin-bottom: 40px;
+            }
+        }
+
+        &__input {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-bottom: 1px solid $midGray;
+            color: $midGray;
+            font-size: 16px;
+            outline: none;
+
+            @include mq(md) {
+                font-size: 20px;
+            }
+
+            &::placeholder {
+                color: $midGray;
+            }
+
+            &--file {
+                display: none;
+            }
+        }
+        
+        &__label {
+            border: 1px solid $midGray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            color: $midGray;
+            font-weight: 900;
+            height: 100%;
+            font-size: 16px;
+
+            @include mq(md) {
+                font-size: 20px;
+            }
+
+            p {
+                margin: 0;
+            }
+        }
+
+        &__button {
+            color: $lightRed;
+            border: 1px solid $lightRed;
+            height: 100%;
+            text-align: center;
+            background: none;
+            display: block;
+            padding: 0 60px;
+            font-weight: 900;
+            font-size: 16px;
+
+            @include mq(md) {
+                font-size: 20px;
+            }
+        }
+    }
+}

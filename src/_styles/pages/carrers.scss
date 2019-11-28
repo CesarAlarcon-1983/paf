@@ -1,0 +1,156 @@
+.carrers {
+    &__hero {
+        background: url('https://picsum.photos/id/237/1900/1300') no-repeat center center / cover;
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: transparentize($black, .75);
+        }
+
+        &__container {
+            padding-bottom: 100px;
+            height: 70vh;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        &__title {
+            color: $white;
+            font-size: 60px;
+            margin: 0;
+            position: relative;
+            z-index: 2;
+
+            @include mq(md) {
+                font-size: 120px;
+            }   
+        }
+    }
+
+    &__interstitial {
+        background: $black;
+        padding: 50px 0;
+
+        @include mq(md) {
+            padding: 100px 0;
+        }
+
+        &__uppertitle {
+            color: $white;
+            position: relative;
+            padding-top: 20px;
+            margin: 0;
+            font-size: 20px;
+            margin-bottom: 40px;
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 200px;
+                height: 1px;
+                background: $white;
+            }
+        }
+
+        &__title {
+            color: $lightRed;
+            font-size: 35px;
+            margin: 0;
+            margin-bottom: 40px;
+            font-weight: 100;
+            
+            @include mq(md) {
+                font-size: 45px;
+            }
+        }
+
+        &__text {
+            color: $white;
+            margin: 0;
+            line-height: 1.5;
+        }
+    }
+
+    &__countries {
+        padding: 50px 0;
+
+        @include mq(md) {
+            padding: 100px 0;
+        }
+
+        &__uppertitle {
+            color: $black;
+            position: relative;
+            padding-top: 20px;
+            margin: 0;
+            font-size: 20px;
+            margin-bottom: 40px;
+
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 200px;
+                height: 1px;
+                background: $black;
+            }
+        }
+
+        &__group {
+            margin-bottom: 40px;
+        }
+
+        &__group-title {
+            color: $corpBlack;
+            font-size: 50px;
+            margin: 0;
+
+            @include mq(md) {
+                margin-bottom: 40px;
+            }
+        }
+
+        &__carrers-list {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        &__carrers-item {
+            width: 100%;
+            padding: 40px 0;
+
+            @include mq(md) {
+                width: 45%;
+            }
+
+            &:not(:first-child) {
+                border-top: 1px solid $corpBlack;
+
+                @include mq(md) {
+                    border-top: none;
+                }
+            }
+
+            &:nth-child(1n + 3) {
+                @include mq(md) {
+                    border-top: 1px solid $corpBlack;
+                }
+            }
+
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+}
